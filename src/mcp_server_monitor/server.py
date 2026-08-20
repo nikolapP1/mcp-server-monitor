@@ -1,6 +1,6 @@
 """Main MCP server setup."""
 
-from mcp.server.fastmcp import FastMCP
+from mcp.server import MCPServer
 
 from .tools.http import check_http_endpoint
 from .tools.system import check_cpu_usage, check_disk_usage, check_memory_usage
@@ -8,7 +8,7 @@ from .tools.network import check_port
 from .tools.processes import list_processes
 from .resources.status import get_system_info, get_system_health
 
-mcp = FastMCP(
+mcp = MCPServer(
     "Server Health Monitor",
     instructions="A server health monitoring tool. Use it to check HTTP endpoints, system resources (CPU, memory, disk), network ports, and running processes.",
 )
