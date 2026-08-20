@@ -1,0 +1,22 @@
+[project]
+name = "mcp-server-monitor"
+version = "0.1.0"
+description = "An MCP server for monitoring server health — check HTTP endpoints, CPU, memory, disk, ports, and processes using natural language with LLMs."
+readme = "README.md"
+authors = [
+    { name = "nikolapP1", email = "nikola.petrov01@abv.bg" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "httpx>=0.28.1",
+    "mcp[cli]>=2.0.0",
+    "psutil>=7.2.2",
+    "pytest>=9.1.1",
+]
+
+[project.scripts]
+mcp-server-monitor = "mcp_server_monitor:main"
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"
